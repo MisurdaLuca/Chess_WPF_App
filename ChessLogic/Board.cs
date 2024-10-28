@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ChessLogic
+{
+    public class Board
+    {
+        private readonly Piece[,] pieces = new Piece[8, 8];
+
+        #region Indexers
+        public Piece this[int row, int col]
+        {
+            get { return pieces[row, col]; }
+            set { pieces[row, col] = value; }
+        }
+
+        public Piece this[Position position]
+        {
+            get { return this[position.Row, position.Column];}
+            set { this[position.Row, position.Column] = value; }
+        }
+        #endregion
+
+        public static Board Intial()
+        {
+            Board board=new Board();
+            board.AddStartPieces();
+            return board;
+        }
+
+        private void AddStartPieces()
+        {
+            this[0, 0] = new Rook(Player.Black);
+            this[0, 1] = new Knight(Player.Black);
+            this[0, 2] = new Bishop(Player.Black);
+            this[0, 3] = new Queen(Player.Black);
+            this[0, 4] = new King(Player.Black);
+            this[0, 5] = new Bishop(Player.Black);
+            this[0, 6] = new Knight(Player.Black);
+            this[0, 7] = new Rook(Player.Black);
+            for (int i = 0; i < 8; i++)
+            {
+                this[0,i]=new Pawn(Player.Black);
+                this[6, i] = new Rook(Player.White);
+            }
+            this[7, 0] = new Rook(Player.White);
+            this[7, 1] = new Knight(Player.White);
+            this[7, 2] = new Bishop(Player.White);
+            this[7, 3] = new Queen(Player.White);
+            this[7, 4] = new King(Player.White);
+            this[7, 5] = new Bishop(Player.White);
+            this[7, 6] = new Knight(Player.White);
+            this[7, 7] = new Rook(Player.White);
+        }
+    }
+}
