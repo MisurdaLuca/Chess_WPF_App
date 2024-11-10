@@ -19,12 +19,18 @@
     <None Remove="Assets\chess_icon.ico" />
     <None Remove="Assets\CursorB.cur" />
     <None Remove="Assets\CursorW.cur" />
+    <None Remove="Assets\grassboard.png" />
+    <None Remove="Assets\pixelboard.png" />
     <None Remove="Assets\white_bishop.png" />
     <None Remove="Assets\white_king.png" />
     <None Remove="Assets\white_knight.png" />
     <None Remove="Assets\white_pawn.png" />
     <None Remove="Assets\white_queen.png" />
     <None Remove="Assets\white_rook.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChessLogic\ChessLogic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +44,8 @@
     <Resource Include="Assets\chess_icon.ico" />
     <Resource Include="Assets\CursorB.cur" />
     <Resource Include="Assets\CursorW.cur" />
+    <Resource Include="Assets\grassboard.png" />
+    <Resource Include="Assets\pixelboard.png" />
     <Resource Include="Assets\white_bishop.png" />
     <Resource Include="Assets\white_king.png" />
     <Resource Include="Assets\white_knight.png" />
