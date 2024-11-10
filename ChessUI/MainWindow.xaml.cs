@@ -30,6 +30,7 @@ namespace ChessUI
             InitializeBoard();
             gameStatus = new GameStatus(Player.White, Board.Intial());
             DrawBoard(gameStatus.Board);
+            SetCursor(gameStatus.CurrentPlayer);
         }
         public void InitializeBoard()
         {
@@ -100,6 +101,7 @@ namespace ChessUI
         {
             gameStatus.MakeMove(move);
             DrawBoard(gameStatus.Board);
+            SetCursor(gameStatus.CurrentPlayer);
         }
 
         private Position ToSquarePosition(Point point)
@@ -121,10 +123,20 @@ namespace ChessUI
 
         private void ShowHighlights()
         {
-            Color color = Color.FromArgb(150, 125, 255, 125);
-            foreach(Position to in moveCache.Keys)
+            Color color;
+
+            if (gameStatus.CurrentPlayer == Player.White)
             {
-                highlights[to.Row,to.Column].Fill=new SolidColorBrush(color);
+                color = Color.FromArgb(150, 255, 51, 51); // Piros, ha a fehér lép
+            }
+            else
+            {
+                color = Color.FromArgb(150, 0, 255, 255); // Kék, ha a fekete lép
+            }
+
+            foreach (Position to in moveCache.Keys)
+            {
+                highlights[to.Row, to.Column].Fill = new SolidColorBrush(color);
             }
         }
 
@@ -133,6 +145,18 @@ namespace ChessUI
             foreach(Position to in moveCache.Keys)
             {
                 highlights[to.Row, to.Column].Fill = Brushes.Transparent;
+            }
+        }
+
+        private void SetCursor(Player player)
+        {
+            if(player==Player.White)
+            {
+                Cursor = ChessCursors.WhiteCursor;
+            }
+            else
+            {
+                Cursor = ChessCursors.BlackCursor;
             }
         }
 
