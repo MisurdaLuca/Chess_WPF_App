@@ -43,7 +43,7 @@ namespace ChessLogic
             this[0, 7] = new Rook(Player.Black);
             for (int i = 0; i < 8; i++)
             {
-                this[0,i]=new Pawn(Player.Black);
+                this[1,i]=new Pawn(Player.Black);
                 this[6, i] = new Rook(Player.White);
             }
             this[7, 0] = new Rook(Player.White);
@@ -54,6 +54,14 @@ namespace ChessLogic
             this[7, 5] = new Bishop(Player.White);
             this[7, 6] = new Knight(Player.White);
             this[7, 7] = new Rook(Player.White);
+        }
+        public static bool IsInside(Position pos)
+        {
+            return pos.Row >= 0 && pos.Row < 8 && pos.Column >= 0 && pos.Column < 8;
+        }
+        public bool IsEmpty(Position pos)
+        {
+            return this[pos] == null;
         }
     }
 }
