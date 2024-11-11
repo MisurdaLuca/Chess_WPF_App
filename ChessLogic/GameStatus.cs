@@ -66,5 +66,15 @@ namespace ChessLogic
         {
             return Result != null;
         }
+        public Position GetCheckedKingPosition()
+        {
+            // Ellenőrizzük, hogy a jelenlegi játékos királya sakkban van-e
+            if (Board.IsInCheck(CurrentPlayer))
+            {
+                // Visszaadjuk a sakkban lévő király pozícióját
+                return Board.KingPositionFor(CurrentPlayer);
+            }
+            return null; // Ha nincs sakk, akkor null értéket adunk vissza
+        }
     }
 }

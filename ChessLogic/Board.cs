@@ -99,5 +99,20 @@ namespace ChessLogic
             }
             return copy;
         }
+
+        //NEW FEATURE
+        public Position KingPositionFor(Player player)
+        {
+            // Végigmegyünk az összes pozíción, hogy megtaláljuk a játékos királyának pozícióját
+            foreach (Position pos in PiecePositionsFor(player))
+            {
+                Piece piece = this[pos];
+                if (piece.Type == PieceType.King && piece.Color == player)
+                {
+                    return pos; // Visszaadjuk a király pozícióját
+                }
+            }
+            throw new InvalidOperationException("King not found on the board.");
+        }
     }
 }
