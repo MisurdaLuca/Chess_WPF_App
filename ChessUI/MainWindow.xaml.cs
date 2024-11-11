@@ -108,7 +108,9 @@ namespace ChessUI
             DrawBoard(gameStatus.Board);
             SetCursor(gameStatus.CurrentPlayer);
 
-            if(gameStatus.IsGameOver())
+            HighlightCheckPosition();
+
+            if (gameStatus.IsGameOver())
             {
                 ShowGameOver();
             }
@@ -128,6 +130,17 @@ namespace ChessUI
             foreach (Move move in moves)
             {
                 moveCache[move.ToPos] = move;
+            }
+        }
+        private void HighlightCheckPosition()
+        {
+            // Ellenőrizzük, hogy a jelenlegi játékos királya sakkban van-e
+            Position checkPosition = gameStatus.GetCheckedKingPosition();
+            if (checkPosition != null)
+            {
+                // Piros színnel kiemeljük a sakkban lévő király mezőjét
+                Color checkColor = Color.FromArgb(200, 255, 0, 0); // Világos piros
+                highlights[checkPosition.Row, checkPosition.Column].Fill = new SolidColorBrush(checkColor);
             }
         }
 
@@ -155,6 +168,11 @@ namespace ChessUI
             foreach(Position to in moveCache.Keys)
             {
                 highlights[to.Row, to.Column].Fill = Brushes.Transparent;
+            }
+            Position checkPosition = gameStatus.GetCheckedKingPosition();
+            if (checkPosition != null)
+            {
+                highlights[checkPosition.Row, checkPosition.Column].Fill = Brushes.Transparent;
             }
         }
 
