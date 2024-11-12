@@ -51,7 +51,6 @@
     <Resource Include="Assets\grassboard.png" />
     <Resource Include="Assets\pixelboard.png" />
     <Resource Include="Assets\plantwall.jpg" />
-    <Resource Include="Assets\promotion.png" />
     <Resource Include="Assets\selectpiece.png" />
     <Resource Include="Assets\sign.png" />
     <Resource Include="Assets\white_bishop.png" />
