@@ -22,6 +22,8 @@
     <None Remove="Assets\grassboard.png" />
     <None Remove="Assets\pixelboard.png" />
     <None Remove="Assets\plantwall.jpg" />
+    <None Remove="Assets\promotion.png" />
+    <None Remove="Assets\selectpiece.png" />
     <None Remove="Assets\sign.png" />
     <None Remove="Assets\white_bishop.png" />
     <None Remove="Assets\white_king.png" />
@@ -49,6 +51,8 @@
     <Resource Include="Assets\grassboard.png" />
     <Resource Include="Assets\pixelboard.png" />
     <Resource Include="Assets\plantwall.jpg" />
+    <Resource Include="Assets\promotion.png" />
+    <Resource Include="Assets\selectpiece.png" />
     <Resource Include="Assets\sign.png" />
     <Resource Include="Assets\white_bishop.png" />
     <Resource Include="Assets\white_king.png" />
