@@ -62,7 +62,7 @@ namespace ChessLogic
             Position oneMovePos = from + forward;
             if(CanMoveTo(oneMovePos, board))
             {
-                if(oneMovePos.Row==0 || oneMovePos.Column==7)
+                if(oneMovePos.Row==0 || oneMovePos.Row==7)
                 {
                     foreach(Move promMove in PromotionMoves(from, oneMovePos))
                     {
@@ -89,7 +89,7 @@ namespace ChessLogic
                 Position to = from + forward + dir;
                 if (CanCaptureAt(to, board))
                 {
-                    if (to.Row == 0 || to.Column == 7)
+                    if (to.Row == 0 || to.Row == 7)
                     {
                         foreach (Move promMove in PromotionMoves(from, to))
                         {
