@@ -243,5 +243,6 @@ namespace ChessUI
             DrawBoard(gameStatus.Board);
             SetCursor(gameStatus.CurrentPlayer);
         }
+
     }
 }
