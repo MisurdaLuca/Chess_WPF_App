@@ -9,7 +9,8 @@
     <Border Width="275"
         Height="125"
         BorderThickness="3"
-        BorderBrush="Black">
+        BorderBrush="Black"
+        CornerRadius="10">
 
         <Border.Background>
             <ImageBrush ImageSource="Assets/selectpiece.png"
@@ -30,10 +31,10 @@
                  Cursor="Hand">
                 <Image x:Name="QueenImg"
                MouseDown="QueenImg_MouseDown"
-               Source="Assets/white_queen.png" RenderTransformOrigin="1.236,0.474" Margin="0,4,0,0"/>
+               Source="Assets/white_queen.png" RenderTransformOrigin="1.236,0.474" Margin="0,4,-1,2"/>
                 <Image x:Name="BishopImg"
                MouseDown="BishopImg_MouseDown"
-               Source="Assets/white_bishop.png"/>
+               Source="Assets/white_bishop.png" Margin="0,0,0,-2"/>
                 <Image x:Name="KnightImg"
                MouseDown="KnightImg_MouseDown"
                Source="Assets/white_knight.png" RenderTransformOrigin="0.5,0.5" Margin="0,0,-9,-1">

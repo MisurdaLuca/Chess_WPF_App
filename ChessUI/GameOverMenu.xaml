@@ -26,13 +26,14 @@
                        x:Name="WinnerText"
                        Text="WINNER TEXT"
                        Style="{StaticResource TextStyle}"
-                       FontSize="30" FontWeight="ExtraBold"/>
+                       FontSize="30" FontWeight="Bold" FontFamily="Consolas"/>
             
             <TextBlock Grid.Row="1"
                        Grid.ColumnSpan="2"
                        x:Name="ReasonText"
                        Text="REASON TEXT"
                        Style="{StaticResource TextStyle}"
+                       Foreground="White"
                        FontSize="14" FontWeight="Bold" FontFamily="Bahnschrift"/>
             
             <Button Grid.Row="2"
