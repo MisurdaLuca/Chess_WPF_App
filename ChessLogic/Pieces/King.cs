@@ -14,7 +14,7 @@
             Direction.NorthEast,
             Direction.SouthWest,
             Direction.SouthEast,
-            Direction.NorthEast,
+            Direction.NorthWest
         };
 
         public King(Player color)
@@ -94,7 +94,7 @@
             {
                 yield return new Castle(MoveType.CastleKs, from);
             }
-            if(CanCastleKingSide(from,board))
+            if(CanCastleQueenSide(from,board))
             {
                 yield return new Castle(MoveType.CastleQs, from);
             }
