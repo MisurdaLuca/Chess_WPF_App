@@ -84,13 +84,23 @@ namespace ChessUI
         private void OnFromPositionSelected(Position pos)
         {
             IEnumerable<Move> moves = gameStatus.LegalMovesForPiece(pos);
-            if(moves.Any())
+            if (moves.Any())
             {
                 selectedPos = pos;
                 CacheMoves(moves);
                 ShowHighlights();
+
+                // Ha van sáncolás lehetőség, azt is kiemeljük
+                foreach (Move move in moves)
+                {
+                    if (move is Castle castleMove)
+                    {
+                        HighlightCastle(castleMove); // Kiemeljük a sáncolás útvonalát
+                    }
+                }
             }
         }
+
 
         private void OnToPositionSelected(Position pos)
         {
@@ -109,6 +119,7 @@ namespace ChessUI
                     HandleMove(move);
                 }
             }
+
         }
 
         private void HandlePromotion(Position from, Position to)
@@ -189,10 +200,15 @@ namespace ChessUI
 
         private void HideHighlights()
         {
-            foreach(Position to in moveCache.Keys)
+            for (int i = 0; i < 8; i++)
             {
-                highlights[to.Row, to.Column].Fill = Brushes.Transparent;
+                for (int j = 0; j < 8; j++)
+                {
+                    highlights[i, j].Fill = Brushes.Transparent;
+                }
             }
+
+            // Sakkban lévő király mezőjének törlése
             Position checkPosition = gameStatus.GetCheckedKingPosition();
             if (checkPosition != null)
             {
@@ -234,6 +250,20 @@ namespace ChessUI
                 }
             };
         }
+
+        private void HighlightCastle(Castle castleMove)
+        {
+            Color castleColor = Color.FromArgb(150, 0, 255, 0); // Zöld szín a sáncolás mezőihez
+
+            // Sáncolás útvonalának kiemelése
+            foreach (Position position in castleMove.GetCastlePath())
+            {
+                highlights[position.Row, position.Column].Fill = new SolidColorBrush(castleColor);
+                Panel.SetZIndex(highlights[position.Row, position.Column], 2); // Magasabb ZIndex
+            }
+        }
+
+
 
         private void RestartGame()
         {
