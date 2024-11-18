@@ -68,5 +68,23 @@ namespace ChessLogic
             }
             return true;
         }
+
+        public IEnumerable<Position> GetCastlePath()
+        {
+            List<Position> path = new List<Position>();
+
+            if (Type == MoveType.CastleKs)
+            {
+                // Királyoldali sáncolás: a 8F
+                path.Add(new Position(FromPos.Row, 6));
+            }
+            else if (Type == MoveType.CastleQs)
+            {
+                // Vezéroldali sáncolás: a 8D, 8C, 8B mezők
+                path.Add(new Position(FromPos.Row, 2));  // A végső hely (8C)
+            }
+
+            return path;
+        }
     }
 }
