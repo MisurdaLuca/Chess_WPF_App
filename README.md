@@ -1,6 +1,6 @@
 ![Logo](https://uni-obuda.hu/wp-content/uploads/2021/11/kep3.jpg)
 # ♟️ Game of Thrones Style Chess (Chess_WPF_App)
-
+## Status: Finished
 ## 🗺️ Project Overview
 
 This is a **Game of Thrones themed chess application** developed in **C# using WPF**. The project is partially completed and was created as part of the **GUI course** at Óbuda University (Computer Engineering program).
