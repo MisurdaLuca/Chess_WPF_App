@@ -1,31 +1,31 @@
 ![Logo](https://uni-obuda.hu/wp-content/uploads/2021/11/kep3.jpg)
-# Game of Thrones Style Chess (Chess_WPF_App)
+# ♟️ Game of Thrones Style Chess (Chess_WPF_App)
 
-## Project Overview
+## 🗺️ Project Overview
 
 This is a **Game of Thrones themed chess application** developed in **C# using WPF**. The project is partially completed and was created as part of the **GUI course** at Óbuda University (Computer Engineering program).
 
 The application offers a graphical chessboard with themed visuals inspired by the Game of Thrones universe.
 
-## Features
+## 🧪 Features
 
 - Interactive chessboard with drag-and-drop piece movement  
 - Basic game rules implementation  
 - Game of Thrones style graphics and UI elements  
 - Designed with extensibility for further development  
 
-## Technologies
+## 🧰 Technologies
 
 - C#  
 - WPF (Windows Presentation Foundation)  
 - MVVM design pattern (planned for later implementation)  
 
-## Status
+## 📈 Status
 
 - Partial implementation – core chess logic and GUI are functional  
 - Ongoing development for advanced features and improved UX  
 
-## How to Run
+## ▶️ How to Run
 
 1. Clone the repository:  
    ```bash
@@ -33,7 +33,7 @@ The application offers a graphical chessboard with themed visuals inspired by th
 2. Open the solution file (.sln) in Visual Studio.
 3. Build and run the project.
 
-## Future Plans
+## 🔮 Future Plans
 - Implement full chess rules
 - Add AI opponent with difficulty levels
 - Enhance UI with animations and sound effects
